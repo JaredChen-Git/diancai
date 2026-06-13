@@ -69,10 +69,17 @@
     }
     .dish-card:active { transform: scale(.97); }
 
-    .dish-emoji {
+    .dish-img {
       width: 100%;
       aspect-ratio: 16/10;
-      display: flex;
+      object-fit: cover;
+      display: block;
+      background: linear-gradient(135deg, var(--cat-bg-from, #fff5f5), var(--cat-bg-to, #fff0f0));
+    }
+    .dish-img-fallback {
+      display: none;
+      width: 100%;
+      aspect-ratio: 16/10;
       align-items: center;
       justify-content: center;
       font-size: 56px;
@@ -339,7 +346,8 @@
         return `
           <div class="dish-card" style="--cat-bg-from:${cat.color}15;--cat-bg-to:${cat.color}08">
             <div class="added-badge ${c>0?'show':''}">✓ 已选 ${c}</div>
-            <div class="dish-emoji">${item.emoji||'🍽️'}</div>
+            <img class="dish-img" src="${item.image||''}" alt="${item.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="dish-img-fallback">${item.emoji||'🍽️'}</div>
             <div class="dish-body">
               <div class="dish-name">${item.name}</div>
               <div class="dish-price">¥${item.price}</div>

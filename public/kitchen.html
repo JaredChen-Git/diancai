@@ -195,7 +195,7 @@
             <div class="order-items">
               ${order.items.map(item => `
                 <div class="order-item">
-                  <span>${item.name} × ${item.count}</span>
+                  <span>${item.emoji||'🍽️'} ${item.name} × ${item.count}</span>
                   <span>¥${item.price * item.count}</span>
                 </div>
               `).join('')}

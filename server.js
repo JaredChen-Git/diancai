@@ -17,38 +17,110 @@ if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR);
 const DEFAULT_MENU = {
   categories: [
     {
-      name: '热菜',
+      name: '🥟 淮扬菜',
+      color: '#4CAF50',
       items: [
-        { id: 'r1', name: '西红柿炒鸡蛋', price: 18 },
-        { id: 'r2', name: '宫保鸡丁', price: 28 },
-        { id: 'r3', name: '鱼香肉丝', price: 26 },
-        { id: 'r4', name: '麻婆豆腐', price: 16 },
-        { id: 'r5', name: '红烧排骨', price: 38 },
+        { id: 'h1', name: '清炖狮子头', price: 48, emoji: '🫕' },
+        { id: 'h2', name: '大煮干丝', price: 38, emoji: '🥗' },
+        { id: 'h3', name: '软兜长鱼', price: 78, emoji: '🧵' },
+        { id: 'h4', name: '文思豆腐', price: 36, emoji: '🥣' },
+        { id: 'h5', name: '清蒸鳜鱼', price: 88, emoji: '🐟' },
+        { id: 'h6', name: '水晶肴肉', price: 48, emoji: '🍖' },
+        { id: 'h7', name: '拆烩鲢鱼头', price: 68, emoji: '🐠' },
+        { id: 'h8', name: '芙蓉鸡片', price: 42, emoji: '🍗' },
+        { id: 'h9', name: '开洋蒲菜', price: 32, emoji: '🥬' },
+        { id: 'h10', name: '蛋烧卖', price: 28, emoji: '🥟' },
       ]
     },
     {
-      name: '凉菜',
+      name: '🥘 东北菜',
+      color: '#E53935',
       items: [
-        { id: 'l1', name: '凉拌黄瓜', price: 10 },
-        { id: 'l2', name: '皮蛋豆腐', price: 12 },
-        { id: 'l3', name: '拍黄瓜', price: 8 },
+        { id: 'd1', name: '锅包肉', price: 48, emoji: '🍖' },
+        { id: 'd2', name: '地三鲜', price: 28, emoji: '🥔' },
+        { id: 'd3', name: '猪肉炖粉条', price: 38, emoji: '🍜' },
+        { id: 'd4', name: '小鸡炖蘑菇', price: 48, emoji: '🍄' },
+        { id: 'd5', name: '酸菜白肉锅', price: 58, emoji: '🍲' },
+        { id: 'd6', name: '溜肉段', price: 38, emoji: '🥩' },
+        { id: 'd7', name: '拔丝地瓜', price: 28, emoji: '🍠' },
+        { id: 'd8', name: '家常凉菜', price: 22, emoji: '🥒' },
+        { id: 'd9', name: '酱骨头', price: 48, emoji: '🦴' },
+        { id: 'd10', name: '豆角烀饼', price: 32, emoji: '🫘' },
       ]
     },
     {
-      name: '主食',
+      name: '🌶️ 川菜',
+      color: '#FF6F00',
       items: [
-        { id: 'z1', name: '米饭', price: 2 },
-        { id: 'z2', name: '馒头', price: 1 },
-        { id: 'z3', name: '面条', price: 12 },
+        { id: 'c1', name: '麻婆豆腐', price: 28, emoji: '🫘' },
+        { id: 'c2', name: '水煮肉片', price: 48, emoji: '🌶️' },
+        { id: 'c3', name: '鱼香肉丝', price: 36, emoji: '🥢' },
+        { id: 'c4', name: '宫保鸡丁', price: 38, emoji: '🐔' },
+        { id: 'c5', name: '回锅肉', price: 38, emoji: '🥓' },
+        { id: 'c6', name: '辣子鸡', price: 42, emoji: '🌶️' },
+        { id: 'c7', name: '毛血旺', price: 58, emoji: '🫕' },
+        { id: 'c8', name: '酸菜鱼', price: 58, emoji: '🐟' },
+        { id: 'c9', name: '夫妻肺片', price: 32, emoji: '🥩' },
+        { id: 'c10', name: '干煸四季豆', price: 26, emoji: '🫘' },
       ]
     },
     {
-      name: '饮品',
+      name: '🦐 粤菜',
+      color: '#00897B',
       items: [
-        { id: 'y1', name: '可乐', price: 5 },
-        { id: 'y2', name: '雪碧', price: 5 },
-        { id: 'y3', name: '矿泉水', price: 2 },
-        { id: 'y4', name: '果汁', price: 8 },
+        { id: 'y1', name: '白切鸡', price: 58, emoji: '🍗' },
+        { id: 'y2', name: '清蒸石斑鱼', price: 128, emoji: '🐟' },
+        { id: 'y3', name: '豉汁蒸排骨', price: 48, emoji: '🍖' },
+        { id: 'y4', name: '菠萝咕咾肉', price: 42, emoji: '🍍' },
+        { id: 'y5', name: '蚝油生菜', price: 22, emoji: '🥬' },
+        { id: 'y6', name: '冬瓜薏米排骨汤', price: 38, emoji: '🍲' },
+        { id: 'y7', name: '滑蛋虾仁', price: 48, emoji: '🦐' },
+        { id: 'y8', name: '烧鹅', price: 68, emoji: '🦆' },
+        { id: 'y9', name: '啫啫鸡', price: 48, emoji: '🍗' },
+        { id: 'y10', name: '咸鱼蒸肉饼', price: 36, emoji: '🥮' },
+      ]
+    },
+    {
+      name: '🥩 西餐',
+      color: '#7B1FA2',
+      items: [
+        { id: 'x1', name: '黑椒牛排', price: 168, emoji: '🥩' },
+        { id: 'x2', name: '意式番茄肉酱意面', price: 48, emoji: '🍝' },
+        { id: 'x3', name: '奶油蘑菇汤', price: 28, emoji: '🥣' },
+        { id: 'x4', name: '法式煎鹅肝', price: 128, emoji: '🫘' },
+        { id: 'x5', name: '香煎三文鱼', price: 88, emoji: '🍣' },
+        { id: 'x6', name: '西班牙海鲜饭', price: 78, emoji: '🥘' },
+        { id: 'x7', name: '培根蘑菇披萨', price: 68, emoji: '🍕' },
+        { id: 'x8', name: '德式烤猪肘', price: 98, emoji: '🍖' },
+        { id: 'x9', name: '凯撒沙拉', price: 32, emoji: '🥗' },
+        { id: 'x10', name: '千层面', price: 58, emoji: '🧀' },
+      ]
+    },
+    {
+      name: '🥤 饮品',
+      color: '#00ACC1',
+      items: [
+        { id: 'yl1', name: '可乐', price: 5, emoji: '🥤' },
+        { id: 'yl2', name: '雪碧', price: 5, emoji: '🥤' },
+        { id: 'yl3', name: '纯牛奶', price: 8, emoji: '🥛' },
+        { id: 'yl4', name: '鲜榨橙汁', price: 18, emoji: '🍊' },
+        { id: 'yl5', name: '红茶', price: 12, emoji: '🫖' },
+        { id: 'yl6', name: '绿茶', price: 12, emoji: '🍵' },
+        { id: 'yl7', name: '气泡矿泉水', price: 8, emoji: '💧' },
+        { id: 'yl8', name: '酸奶饮品', price: 10, emoji: '🥛' },
+        { id: 'yl9', name: '美式咖啡', price: 18, emoji: '☕' },
+        { id: 'yl10', name: '椰汁', price: 12, emoji: '🥥' },
+      ]
+    },
+    {
+      name: '🌅 早餐',
+      color: '#FF8F00',
+      items: [
+        { id: 'z1', name: '豆浆油条', price: 10, emoji: '🥖' },
+        { id: 'z2', name: '包子小米粥', price: 12, emoji: '🥟' },
+        { id: 'z3', name: '煎蛋全麦吐司牛奶', price: 22, emoji: '🍳' },
+        { id: 'z4', name: '馄饨', price: 15, emoji: '🥟' },
+        { id: 'z5', name: '杂粮煎饼豆腐脑', price: 12, emoji: '🥞' },
       ]
     }
   ]

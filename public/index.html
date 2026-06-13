@@ -320,7 +320,7 @@
       el.innerHTML = menu.categories.map(c =>
         `<button style="${c.name === activeCategory ? `--cat-color:${c.color||'#FF6B6B'}`:''}"
           class="${c.name === activeCategory ? 'active':''}"
-          onclick="switchCat('${c.name}')">${c.displayName||c.name}</button>`
+          onclick="switchCat('${c.name}')">${c.name}</button>`
       ).join('');
     }
 
